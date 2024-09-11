@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    
+<hibernate-configuration>
+
+<session-factory>
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/hotelmanagementsystem</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">123456789</property>
+    
+    <!-- JDBC connection pool settings (Optional) -->
+    <property name="hibernate.c3p0.min_size">5</property>
+    <property name="hibernate.c3p0.max_size">20</property>
+    <property name="hibernate.c3p0.timeout">300</property>
+    <property name="hibernate.c3p0.max_statements">50</property>
+    <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+    <!-- Specify the dialect for the MySQL database -->
+    <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+    
+    <!-- Automatically create/drop/update schema -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+    
+    <!-- Show SQL statements in console -->
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>
+
+    <!-- Mapping files -->
+    <mapping class="com.hms.Admin"/>
+    <mapping class="com.hms.Customers"/>
+    <mapping class="com.hms.Room"/>
+    <mapping class="com.hms.Drivers"/>
+    <mapping class="com.hms.Employees"/>
+    <mapping class="com.hms.Department"/>
+    <mapping class="com.hms.VegFood"/>
+    <mapping class="com.hms.NonVegfood"/>
+    <mapping class="com.hms.Food"/>
+    <mapping class="com.hms.BookingRoom"/>
+    
+</session-factory>  
+
+</hibernate-configuration>
